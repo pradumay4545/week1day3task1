@@ -1,0 +1,68 @@
+
+:root{
+  --gap: 1rem;
+  --pad: 1rem;
+  --bg: #f7f8fb;
+  --card-bg: #ffffff;
+  --accent: #0b74da;
+  --radius: 12px;
+  --shadow: 0 6px 18px rgba(13, 26, 40, 0.06);
+  --max-width: 1100px;
+}
+
+* { box-sizing: border-box; }
+html,body { height: 100%; margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: var(--bg); color: #111; }
+
+.container{
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 0 var(--gap);
+  display: flex;
+  flex-direction: column; 
+  gap: var(--gap);
+  align-items: stretch;
+}
+
+
+.card{
+  background: var(--card-bg);
+  padding: var(--pad);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(12, 20, 40, 0.04);
+  min-height: 160px;         
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.card h2 {
+  margin: 0 0 .5rem 0;
+  font-size: 1.15rem;
+  color: var(--accent);
+}
+.card p {
+  margin: 0;
+  line-height: 1.4;
+  color: #333;
+}
+
+
+@media (min-width: 900px) {
+  .container {
+    flex-direction: row;    
+  }
+
+  .card {
+    flex: 1 1 0;            
+    min-height: 220px;
+  }
+}
+
+
+.card:focus-within {
+  outline: 3px solid rgba(11,116,218,0.12);
+  outline-offset: 4px;
+}
